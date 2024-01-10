@@ -939,12 +939,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4388355152282729600}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.66523385, y: 0.7064235, z: -0.23971607, w: -0.031081596}
-  m_LocalPosition: {x: -0.12120002, y: 0.026099995, z: -0.026100036}
-  m_LocalScale: {x: 1.6059171, y: 1.6059171, z: 1.6059171}
+  m_LocalRotation: {x: 0.6990006, y: 0.69913197, z: -0.10676186, w: 0.10589965}
+  m_LocalPosition: {x: -0.052920736, y: 0.025955774, z: -0.028490387}
+  m_LocalScale: {x: 0.97348005, y: 0.9734801, z: 0.97348}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3034563196500758217}
+  m_Father: {fileID: 9073339810402656773}
   m_LocalEulerAnglesHint: {x: 17.297, y: 202.336, z: 90}
 --- !u!33 &7422728457253949800
 MeshFilter:
@@ -2052,8 +2052,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5799699705330813735, guid: c581011761d5c42478e033440977af34, type: 3}
-      insertIndex: 1
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c581011761d5c42478e033440977af34, type: 3}
+      insertIndex: 0
       addedObject: {fileID: 6026051353965637787}
     - targetCorrespondingSourceObject: {fileID: -5729916553660645260, guid: c581011761d5c42478e033440977af34, type: 3}
       insertIndex: 1
@@ -2493,11 +2493,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -565976488681410457, guid: c581011761d5c42478e033440977af34, type: 3}
---- !u!4 &3034563196500758217 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5799699705330813735, guid: c581011761d5c42478e033440977af34, type: 3}
-  m_PrefabInstance: {fileID: 8818121743505327598}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3308683825551554696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6308009712811785574, guid: c581011761d5c42478e033440977af34, type: 3}
@@ -3001,3 +2996,8 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!4 &9073339810402656773 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c581011761d5c42478e033440977af34, type: 3}
+  m_PrefabInstance: {fileID: 8818121743505327598}
+  m_PrefabAsset: {fileID: 0}
