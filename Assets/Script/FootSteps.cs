@@ -55,6 +55,11 @@ public class Footsteps : MonoBehaviour
             StopFootsteps();
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StopFootsteps();
+        }
+
     }
 
     void footsteps()

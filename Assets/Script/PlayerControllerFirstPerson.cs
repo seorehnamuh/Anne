@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class PlayerControllerFirstPerson : MonoBehaviour
 {
-    public float walkSpeed = 5.0f; // Velocit� di movimento normale
-    public float sprintSpeed = 10.0f; // Velocit� di sprint
-    public float mouseSensitivity = 2.0f; // Sensibilit� del mouse
+    public float walkSpeed = 5.0f;
+    public float sprintSpeed = 10.0f;
+    public float mouseSensitivity = 2.0f;
+    public float jumpForce = 8.0f;
     private float verticalRotation = 0.0f;
-    public float upDownRange = 60.0f; // Limite di inclinazione su/gi� della visuale
+    public float upDownRange = 60.0f;
     public Camera playerCam;
     private CharacterController characterController;
-    public GameObject Prefab;
+    private Vector3 moveDirection = Vector3.zero;
+    private float gravity = 15f;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked; // Nasconde il cursore del mouse e lo blocca al centro dello schermo
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        // Input per il movimento
+        // Input per il movimento orizzontale
         float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
         float forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
         float strafeSpeed = Input.GetAxis("Horizontal") * moveSpeed;
 
-        Vector3 speed = new Vector3(strafeSpeed, 0, forwardSpeed);
+        if (characterController.isGrounded)
+        {
+
+            moveDirection = new Vector3(strafeSpeed, 0, forwardSpeed);
+            moveDirection = transform.TransformDirection(moveDirection);
+
+            if (Input.GetAxisRaw("Jump") > 0)
+            {
+                moveDirection.y = jumpForce;
+
+            }
+
+        }
+        else
+        {
+            // Mantieni la direzione orizzontale del movimento, ma applica la gravità
+            moveDirection = new Vector3(strafeSpeed, moveDirection.y, forwardSpeed);
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection.y -= gravity * Time.deltaTime;
+        }
 
         // Applica la rotazione orizzontale basata sul movimento del mouse
         float rotX = Input.GetAxis("Mouse X") * mouseSensitivity;
@@ -37,22 +58,7 @@ public class PlayerControllerFirstPerson : MonoBehaviour
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         playerCam.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 
-        // Applica il movimento verticale della camera basato sul movimento del mouse
-        float rotY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-        playerCam.transform.Rotate(rotY, 0, 0);
-
-        // Applica la gravit�
-        if (characterController.isGrounded)
-        {
-            speed.y = 0;
-        }
-        else
-        {
-            speed.y -= 9.8f; // Gravit� costante
-        }
-
-        // Muove il personaggio in base alla velocit�
-        Vector3 moveDirection = transform.TransformDirection(speed);
+        // Muove il personaggio
         characterController.Move(moveDirection * Time.deltaTime);
     }
 }
