@@ -43,7 +43,7 @@ public class PlayerControllerFirstPerson : MonoBehaviour
         }
         else
         {
-            // Mantieni la direzione orizzontale del movimento, ma applica la gravit√†
+            // Mantieni la direzione orizzontale del movimento, ma applica la gravit‡
             moveDirection = new Vector3(strafeSpeed, moveDirection.y, forwardSpeed);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection.y -= gravity * Time.deltaTime;
