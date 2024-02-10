@@ -59129,7 +59129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3154174682754926867, guid: 2fc1725b830756348b32b6c39d8a809f, type: 3}
       propertyPath: m_TagString
-      value: Respown
+      value: Livello2
       objectReference: {fileID: 0}
     - target: {fileID: 4179828399204123654, guid: 2fc1725b830756348b32b6c39d8a809f, type: 3}
       propertyPath: m_LocalScale.x
