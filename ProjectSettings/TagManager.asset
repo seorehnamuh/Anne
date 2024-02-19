@@ -7,6 +7,13 @@ TagManager:
   - Respown
   - Livello2
   - TestingEnter
+  - TestingEnter2
+  - Screen
+  - Frame
+  - Lego
+  - Horse
+  - Holocron
+  - MagicTree
   layers:
   - Default
   - TransparentFX
