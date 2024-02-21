@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;
     [SerializeField] float turnSpeed = 5f;
-
+    public PlayerHealth playerHealth;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -23,13 +23,28 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if (distanceToTarget <= chaseRange)
+        if (distanceToTarget <= chaseRange && playerHealth.currentHealth > 0)
         {
             EngageTarget();
         }
-
+        if (playerHealth.currentHealth == 0)
+        {
+            gameOver();
+        }
     }
 
+    private void gameOver()
+    {
+        enemyGameOver();
+        playerHealth.playerIsDead();
+    }
+
+    private void enemyGameOver()
+    {
+        navMeshAgent.ResetPath();
+        GetComponent<Animator>().SetBool("Attack", false);
+        GetComponent<Animator>().ResetTrigger("Move");
+    }
 
     private void EngageTarget()
     {
@@ -67,5 +82,13 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerHealth.TakeDamage(10);
+        }
     }
 }
