@@ -36,7 +36,7 @@ public class EnemyAI : MonoBehaviour
     private void gameOver()
     {
         enemyGameOver();
-        playerHealth.playerIsDead();
+        playerHealth.PlayerDeath();
     }
 
     private void enemyGameOver()

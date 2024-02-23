@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public int maxHealth = 10;
     public int currentHealth;
     public HealthBar healthBar;
@@ -24,9 +25,12 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    public void playerIsDead()
+    public void PlayerDeath()
     {
-        canvas.enabled = true;
-        playerController.enabled = false;
+        if (currentHealth == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("restart");
+        }
     }
 }
