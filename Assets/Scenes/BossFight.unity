@@ -15986,9 +15986,6 @@ PrefabInstance:
       addedObject: {fileID: 1148789619}
     - targetCorrespondingSourceObject: {fileID: 100100, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1148789628}
-    - targetCorrespondingSourceObject: {fileID: 100100, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1148789622}
     - targetCorrespondingSourceObject: {fileID: 100100, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
       insertIndex: -1
@@ -15996,6 +15993,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100100, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1148789629}
+    - targetCorrespondingSourceObject: {fileID: 100100, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1148789630}
   m_SourcePrefab: {fileID: 100100000, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
 --- !u!1 &1148789617 stripped
 GameObject:
@@ -16073,22 +16073,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f5a9bd478ca094495a4520e37f57420d, type: 3}
---- !u!114 &1148789628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148789617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cef9bdb006331f4c90f6af3d8a71c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 949150873}
-  chaseRange: 10
-  turnSpeed: 5
-  playerHealth: {fileID: 949150875}
 --- !u!114 &1148789629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16103,7 +16087,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 100
-  enemyHealthBar: {fileID: 0}
+  enemyHealthBar: {fileID: 1091044424}
+--- !u!114 &1148789630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148789617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccdcca4c3af9ec4c85fc2e8fd32a4bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 949150873}
+  chaseRange: 10
+  turnSpeed: 5
+  playerHealth: {fileID: 949150875}
 --- !u!850595691 &1148927485
 LightingSettings:
   m_ObjectHideFlags: 0

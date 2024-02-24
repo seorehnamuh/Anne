@@ -14,6 +14,7 @@ TagManager:
   - Horse
   - Holocron
   - MagicTree
+  - Trap
   layers:
   - Default
   - TransparentFX
