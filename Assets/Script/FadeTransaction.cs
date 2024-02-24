@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
-    public float fadeDuration = 1f; // Durata del fade-out
-    public Image fadePanel; // Il pannello UI per il fade-out
+    public float fadeDuration = 1f; 
+    public Image fadePanel; 
     public PlayerHealth playerHealth;
     void Start()
     {
-        // Assicurati che il pannello di fade-out sia completamente trasparente all'avvio
+       
         fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, 0f);
 
-        // Avvia il fade-out
+       
     }
 
     public void Update()
