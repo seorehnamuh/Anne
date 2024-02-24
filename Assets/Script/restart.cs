@@ -16,7 +16,7 @@ public class restart : MonoBehaviour
     {
         
     }
-
+   
     public void LoadGame ()
     {
         SceneManager.LoadScene("BossFight");
