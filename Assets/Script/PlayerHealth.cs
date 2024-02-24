@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public PlayerControllerFirstPerson playerController;
-    [SerializeField] Canvas canvas;
+    //[SerializeField] Canvas canvas;
     public float delayBeforeSceneChange = 2f; // Ritardo prima del cambio scena
     public float fadeDuration = 1f; // Durata del fade-out
     public Image fadePanel; // Il pannello UI per il fade-out
@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        canvas.enabled = false;
+        //canvas.enabled = false;
         // Assicurati che il pannello di fade-out sia completamente trasparente all'avvio
         fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, 0f);
     }
