@@ -12,11 +12,11 @@ public class TriggerManager : MonoBehaviour
     {
         objectsWithMessages = new Dictionary<string, string>
         {
-          { "Frame", "Caspita!, è uguale a me! ma chi è lui, non è certo Bubu!" },
+          { "Frame", "Caspita!, 'e uguale a me! ma chi 'e lui, non 'e certo Bubu!" },
           { "Screen", "Che cos' e' questa cosa luminosa ?" },
           { "Holocron", "Questo gioco fa paura..." },
-          { "MagicTree", "wow, è meraviglioso questo albero..." },
-          { "Horse", "Ahahah, il mio è più bello, è rosso!" },
+          { "MagicTree", "wow, 'e meraviglioso questo albero..." },
+          { "Horse", "Ahahah, il mio 'e piu' bello, 'e rosso!" },
           { "Lego", "sembrano proprio le mie costuzioni!" },
 
         };
