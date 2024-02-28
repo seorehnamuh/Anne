@@ -15,10 +15,9 @@ public class Testdamageenemy : MonoBehaviour
         enemyHealthBar.SetMaxHealth(maxHealth);
     }
 
-  
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if ( Input.GetKeyDown(KeyCode.U))
+        if (collision.gameObject.tag=="Legoo")
 
         {
             TakeDamage(5);
