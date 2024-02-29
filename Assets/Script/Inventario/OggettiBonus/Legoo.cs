@@ -6,7 +6,7 @@ public class Legoo : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaLegoo();
+        //gameObject.SetActive(false);
+        //SingletonPickUp.Instance.AttivaLegoo();
     }
 }

@@ -15,10 +15,10 @@ TagManager:
   - Holocron
   - MagicTree
   - Trap
-  - Legoo
   - Scarpette
   - Dolcetti
   - Saponetta
+  - Legoo
   layers:
   - Default
   - TransparentFX

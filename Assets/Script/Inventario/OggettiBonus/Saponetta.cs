@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Saponetta : MonoBehaviour
 {
-    private void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaSaponetta();
-    }
+    //private void OnMouseDown()
+    //{
+    //    gameObject.SetActive(false);
+    //    SingletonPickUp.Instance.AttivaSaponetta();
+    //}
 }

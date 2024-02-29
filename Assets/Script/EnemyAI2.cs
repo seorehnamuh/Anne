@@ -88,7 +88,7 @@ public class EnemyAI2 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(10);
+            playerHealth.TakeDamage(1);
         }
     }
 }

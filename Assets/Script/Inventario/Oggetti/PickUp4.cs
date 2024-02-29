@@ -5,10 +5,10 @@ using UnityEngine;
 public class PickUp4 : MonoBehaviour
 {
 
-    private void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaSonoQuattro();
+    //private void OnMouseDown()
+    //{
+    //    //gameObject.SetActive(false);
+    //    //SingletonPickUp.Instance.AttivaSonoQuattro();
 
-    }
+    //}
 }

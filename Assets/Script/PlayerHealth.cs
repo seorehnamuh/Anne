@@ -22,7 +22,10 @@ public class PlayerHealth : MonoBehaviour
         
         fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, 0f);
     }
-
+    void Update()
+    {
+        healthBar.SetHealth(currentHealth);
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

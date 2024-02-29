@@ -7,8 +7,8 @@ public class PickUp5 : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaSonoCinque();
+        //gameObject.SetActive(false);
+        //SingletonPickUp.Instance.AttivaSonoCinque();
 
     }
 }

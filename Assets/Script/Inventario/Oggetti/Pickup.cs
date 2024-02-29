@@ -9,8 +9,8 @@ public class Pickup : MonoBehaviour
 
     private void OnMouseDown()
     {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaSonoUno();
+        //gameObject.SetActive(false);
+        //SingletonPickUp.Instance.AttivaSonoUno();
                                                             
     }
 }

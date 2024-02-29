@@ -14,7 +14,7 @@ public class PlayerControllerFirstPerson : MonoBehaviour
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
     private float gravity = 15f;
-
+    public float moveSpeed = 0;
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -24,7 +24,7 @@ public class PlayerControllerFirstPerson : MonoBehaviour
     private void Update()
     {
         // Input per il movimento orizzontale
-        float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+        moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
         float forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
         float strafeSpeed = Input.GetAxis("Horizontal") * moveSpeed;
 

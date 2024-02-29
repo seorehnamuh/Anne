@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Scarpette : MonoBehaviour
 {
-    private void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaScarpette();
-    }
+    //private void OnMouseDown()
+    //{
+    //    gameObject.SetActive(false);
+    //    SingletonPickUp.Instance.AttivaScarpette();
+    //}
 }

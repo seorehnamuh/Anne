@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Dolcetti : MonoBehaviour
 {
-    private void OnMouseDown()
-    {
-        gameObject.SetActive(false);
-        SingletonPickUp.Instance.AttivaDolcetti();
-    }
+    //private void OnMouseDown()
+    //{
+    //    gameObject.SetActive(false);
+    //    SingletonPickUp.Instance.AttivaDolcetti();
+    //}
 }
