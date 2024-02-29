@@ -17,22 +17,12 @@ public class Testdamageenemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Legoo")
+        if (collision.gameObject.CompareTag("Legoo"))
 
         {
-            TakeDamage(5);
-        }
-    }
-
-    void TakeDamage(int damage)
-    {
-        {
-            currentHealth -= damage;
-
+            _ = currentHealth - 5;
             enemyHealthBar.SetHealth(currentHealth);
+            Debug.Log("Ragno colpito");
         }
     }
-
-
-
 }

@@ -9,16 +9,13 @@ public class Respown : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
 
 
-    void OnTriggerEnter(Collider ChangeScene) // can be Collider HardDick if you want.. I'm not judging you
+    private void OnTriggerEnter(Collider other)
     {
-        if (ChangeScene.gameObject.CompareTag("Respown"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
 
-        if (ChangeScene.gameObject.CompareTag("Livello2"))
+        if (other.CompareTag("Respown"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            SceneManager.LoadScene("restart");
         }
     }
 }
