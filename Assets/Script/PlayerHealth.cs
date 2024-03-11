@@ -62,7 +62,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void PlayerDeath()
     {
-        
+        PlayerPrefs.DeleteAll();
         StartCoroutine(DelayedSceneChange("restart"));
     }
 }
