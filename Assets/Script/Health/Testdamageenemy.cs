@@ -17,12 +17,10 @@ public class Testdamageenemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Legoo"))
-
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-            _ = currentHealth - 5;
-            enemyHealthBar.SetHealth(currentHealth);
-            Debug.Log("Ragno colpito");
+            currentHealth -= 10;
+            Debug.Log($"The spider has the current health: {currentHealth}");
         }
     }
 }

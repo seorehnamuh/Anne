@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour
     
     public float delayBeforeSceneChange = 2f; 
     public float fadeDuration = 1f; 
-    public Image fadePanel; 
+    public Image fadePanel;
+    public SingletonPickUp inventory;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthBar.SetHealth(currentHealth);
+        RecoverHealth();
     }
     public void TakeDamage(int damage)
     {
@@ -64,5 +66,14 @@ public class PlayerHealth : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         StartCoroutine(DelayedSceneChange("restart"));
+    }
+
+    public void RecoverHealth()
+    {
+        if (Input.GetKeyDown(KeyCode.L) && inventory.pickedPicksUps["Dolcetti"] > 0 && currentHealth <= 90)
+        {
+            currentHealth += 10;
+            inventory.pickedPicksUps["Dolcetti"]--;
+        }
     }
 }
