@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Testdamageenemy : MonoBehaviour
 
@@ -21,6 +22,11 @@ public class Testdamageenemy : MonoBehaviour
         {
             currentHealth -= 10;
             Debug.Log($"The spider has the current health: {currentHealth}");
+        }
+
+        if (currentHealth == 0)
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 }
