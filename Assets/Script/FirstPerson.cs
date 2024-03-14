@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerFirstPerson : MonoBehaviour
 {
@@ -60,5 +61,15 @@ public class PlayerControllerFirstPerson : MonoBehaviour
 
         // Muove il personaggio
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Trap"))
+        {
+
+            SceneManager.LoadScene("BossFight");
+        }
     }
 }
