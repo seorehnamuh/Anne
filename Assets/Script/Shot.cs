@@ -18,7 +18,7 @@ public class Shot : MonoBehaviour
     void Update()
     {
 
-        Debug.Log($"Ammunitations: { ammunitations.ToString()}");
+        //Debug.Log($"Ammunitations: { ammunitations.ToString()}");
         if (Input.GetKeyDown(KeyCode.H) && ammunitations > 0) 
         {
             ShootLegoo(); 
@@ -46,5 +46,7 @@ public class Shot : MonoBehaviour
 
         Destroy(Legoo, TimeToDestroyTheLegoo);
         ammunitations--;
+        PlayerPrefs.SetInt("LegooPlayerPref", PlayerPrefs.GetInt("LegooPlayerPref") - 1);
+        Debug.Log($"Ammunitations: { PlayerPrefs.GetInt("LegooPlayerPref") }");
     }
 }

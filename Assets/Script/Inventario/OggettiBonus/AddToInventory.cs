@@ -18,7 +18,7 @@ public class AddToInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        text.text = PlayerPrefs.GetInt(nameOfPlayerPref).ToString();
     }
 
     private void OnTriggerEnter(Collider other)
