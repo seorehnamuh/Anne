@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H) && singlePickUp.pickedPicksUps["Legoo"] > 0)
         {
             Debug.Log("Legoo working");
-            singlePickUp.pickedPicksUps["Legoo"]--;
         }
         if (Input.GetKeyDown(KeyCode.L) && singlePickUp.pickedPicksUps["Saponetta"] > 0)
         {

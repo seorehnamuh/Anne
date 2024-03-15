@@ -12,13 +12,13 @@ public class AddToInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         
+        text.text = PlayerPrefs.GetInt(nameOfPlayerPref).ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,10 +29,6 @@ public class AddToInventory : MonoBehaviour
             ImageOnInventaryCanvas.SetActive(true);
             
             PlayerPrefs.SetInt(nameOfPlayerPref, PlayerPrefs.GetInt(nameOfPlayerPref)+1);
-
-            text.text = PlayerPrefs.GetInt(nameOfPlayerPref).ToString();
-
-
 
             this.gameObject.SetActive(false);
         }

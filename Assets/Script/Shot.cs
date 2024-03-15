@@ -8,11 +8,18 @@ public class Shot : MonoBehaviour
     public float TimeToDestroyTheLegoo = 3f;
     public SingletonPickUp inventory;
 
-    private bool collidedWithLegoo = false; 
+    private bool collidedWithLegoo = false;
+    float ammunitations;
 
+    private void Start()
+    {
+        ammunitations = PlayerPrefs.GetInt("LegooPlayerPref");
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H) && inventory.pickedPicksUps["Legoo"] > 0 ) 
+
+        Debug.Log($"Ammunitations: { ammunitations.ToString()}");
+        if (Input.GetKeyDown(KeyCode.H) && ammunitations > 0) 
         {
             ShootLegoo(); 
         }
@@ -29,7 +36,6 @@ public class Shot : MonoBehaviour
 
     void ShootLegoo()
     {
-        inventory.pickedPicksUps["Legoo"]--;
         GameObject Legoo = Instantiate(LegooPrefab, spawnPoint.position, spawnPoint.rotation);
       
 
@@ -39,6 +45,6 @@ public class Shot : MonoBehaviour
         rb.AddForce(LegooSpeed * spawnPoint.forward * Time.fixedDeltaTime, ForceMode.Impulse);
 
         Destroy(Legoo, TimeToDestroyTheLegoo);
-       
+        ammunitations--;
     }
 }
