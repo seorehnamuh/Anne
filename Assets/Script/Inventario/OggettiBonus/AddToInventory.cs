@@ -12,6 +12,7 @@ public class AddToInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         text.text = PlayerPrefs.GetInt(nameOfPlayerPref).ToString();
     }
 
