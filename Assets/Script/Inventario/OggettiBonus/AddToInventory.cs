@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AddToInventory : MonoBehaviour
 {
@@ -12,7 +13,12 @@ public class AddToInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("Current Scene Name: " + currentSceneName);
+        if (currentSceneName != "BossFight")
+        {
+            PlayerPrefs.DeleteAll();
+        }
         text.text = PlayerPrefs.GetInt(nameOfPlayerPref).ToString();
     }
 
