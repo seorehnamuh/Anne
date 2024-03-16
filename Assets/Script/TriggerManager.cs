@@ -10,6 +10,8 @@ public class TriggerManager : MonoBehaviour
    
     void Start()
     {
+        guiText.enabled = false;
+
         objectsWithMessages = new Dictionary<string, string>
         {
           { "Frame", "Caspita!, 'e uguale a me! ma chi 'e lui, non 'e certo Bubu!" },
