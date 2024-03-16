@@ -26,9 +26,9 @@ public class AddToInventory : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(ImageOnInventaryCanvas!=null)
-            ImageOnInventaryCanvas.SetActive(true);
-            
+            //if (ImageOnInventaryCanvas != null)
+            //    ImageOnInventaryCanvas.SetActive(true);
+
             PlayerPrefs.SetInt(nameOfPlayerPref, PlayerPrefs.GetInt(nameOfPlayerPref)+1);
 
             this.gameObject.SetActive(false);
