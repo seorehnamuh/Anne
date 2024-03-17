@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 9500000}
   m_Layer: 0
-  m_Name: Furniture_flowerstand_02_LOD1
+  m_Name: \
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
