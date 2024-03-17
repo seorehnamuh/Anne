@@ -21,6 +21,8 @@ public class Testdamageenemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             currentHealth -= 10;
+
+            enemyHealthBar.SetHealth(currentHealth);
             Debug.Log($"The spider has the current health: {currentHealth}");
         }
 
