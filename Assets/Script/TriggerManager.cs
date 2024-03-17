@@ -20,6 +20,8 @@ public class TriggerManager : MonoBehaviour
           { "MagicTree", "wow, 'e meraviglioso questo albero..." },
           { "Horse", "Ahahah, il mio 'e piu' bello, 'e rosso!" },
           { "Lego", "sembrano proprio le mie costuzioni!" },
+          { "DoorButton", "Premi Tab per disattiva le porte" },
+
 
         };
 
