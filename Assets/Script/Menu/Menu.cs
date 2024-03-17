@@ -13,8 +13,8 @@ public class Menu : MonoBehaviour
     }
     // Called when we click the "Quit" button.
     public void QuitGame()
-    {
-        Debug.Log("You have quit the game");
+    {      
         Application.Quit();
+        Debug.Log("You have quit the game");
     }
 }

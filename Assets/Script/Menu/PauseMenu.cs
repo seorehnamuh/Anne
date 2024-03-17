@@ -45,12 +45,19 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("You have quit the game");
         Application.Quit();
+        Debug.Log("You have quit the game");
     }
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Debug.Log("Menu Button");
+        Time.timeScale = 1;
+        GameIsPaused = false;
+        SceneManager.LoadScene("Start");
+    }
+    public void Play()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

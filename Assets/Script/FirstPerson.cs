@@ -28,6 +28,10 @@ public class PlayerControllerFirstPerson : MonoBehaviour
         moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
         float forwardSpeed = Input.GetAxis("Vertical") * moveSpeed;
         float strafeSpeed = Input.GetAxis("Horizontal") * moveSpeed;
+        if (Input.GetKey(KeyCode.Escape) == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         if (characterController.isGrounded)
         {
