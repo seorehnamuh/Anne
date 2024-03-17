@@ -10,11 +10,12 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Start");
     }
     // Called when we click the "Quit" button.
     public void QuitGame()
     {
-        Debug.Log("You have quit the game");
         Application.Quit();
+        Debug.Log("You have quit the game");
     }
 }

@@ -7,50 +7,60 @@ using UnityEditor;
 public class PauseMenu : MonoBehaviour
 {
 
-    public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    private bool isPaused = false;
 
-    // Update is called once per frame
     void Update()
     {
+        // Verifica se il tasto Esc è stato premuto
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            // Se il gioco è già in pausa, esci dal menu di pausa
+            if (isPaused)
             {
                 Resume();
             }
-
-            else
-
+            else // Altrimenti, metti in pausa il gioco
             {
                 Pause();
-
             }
         }
     }
 
+    // Metodo per mettere in pausa il gioco
+    void Pause()
+    {
+        // Attiva il menu di pausa
+        pauseMenuUI.SetActive(true);
+
+        // Blocca il tempo nel gioco
+        Time.timeScale = 0f;
+
+        // Imposta lo stato di pausa
+        isPaused = true;
+        Debug.Log("Pausa");
+    }
+
+
+    // Metodo per riprendere il gioco
     public void Resume()
     {
+        // Disattiva il menu di pausa
         pauseMenuUI.SetActive(false);
+
+        // Riprendi il tempo nel gioco
         Time.timeScale = 1f;
-        GameIsPaused = false;
+
+        // Imposta lo stato di pausa
+        isPaused = false;
+        Debug.Log("Resume");
     }
 
-    public void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-    }
-
+    // Metodo per uscire dall'applicazione
     public void QuitGame()
     {
-        Debug.Log("You have quit the game");
+        // Esci dall'applicazione
         Application.Quit();
-    }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Debug.Log("Quit");
     }
 }
