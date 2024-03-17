@@ -13,11 +13,11 @@ public class Shot : MonoBehaviour
 
     private void Start()
     {
-        ammunitations = PlayerPrefs.GetInt("LegooPlayerPref");
+        //ammunitations = PlayerPrefs.GetInt("LegooPlayerPref");
     }
     void Update()
     {
-
+        ammunitations = PlayerPrefs.GetInt("LegooPlayerPref");
         //Debug.Log($"Ammunitations: { ammunitations.ToString()}");
         if (Input.GetKeyDown(KeyCode.H) && ammunitations > 0) 
         {
