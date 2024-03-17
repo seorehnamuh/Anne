@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        Debug.Log($"Current Health: {currentHealth}");
         if (currentHealth <= 0)
         {
             PlayerDeath();
@@ -48,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
+            Debug.Log($"Elapsed Time: {elapsedTime}");
             float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
             fadePanel.color = new Color(fadePanel.color.r, fadePanel.color.g, fadePanel.color.b, alpha);
             elapsedTime += Time.deltaTime;
@@ -70,10 +72,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void RecoverHealth()
     {
-        if (Input.GetKeyDown(KeyCode.L) && inventory.pickedPicksUps["Dolcetti"] > 0 && currentHealth <= 90)
+        if (Input.GetKeyDown(KeyCode.L) && PlayerPrefs.GetInt("DolcettiPlayerPref") > 0 && currentHealth <= 19)
         {
             currentHealth += 10;
             inventory.pickedPicksUps["Dolcetti"]--;
+            PlayerPrefs.SetInt("DolcettiPlayerPref", PlayerPrefs.GetInt("DolcettiPlayerPref") - 1);
         }
     }
 }
